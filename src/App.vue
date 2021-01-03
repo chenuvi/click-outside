@@ -28,12 +28,15 @@ export default {
   directives:{
             clickoutside:{
                 bind(el,binging,vnode){
+                  console.log('el: ', el);
+                  console.log('binging: ', binging);
                     function documentHandler (e){
                         if (el.contains(e.target)){
                             return false
                         }
-                        if (binding.expression) {
-                            binding.value(e)
+                        if (binging.expression) {
+                           binging.value(e)
+                           console.log('binging.value: ', binging.value);
                         }
                     }
                     el.__vueClickOutside__ = documentHandler
@@ -44,7 +47,7 @@ export default {
                     delete el.__vueClickOutside__
                 }
             }
-        }
+  }
 }
 </script>
 
