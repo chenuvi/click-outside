@@ -1,31 +1,13 @@
 <template>
-  <div class="app" v-cloak>
-      <div class="main" v-clickoutside="handleClose">
-        <button @click="show = !show">点击显示下拉菜单</button>
-        <div class="dropdown" v-show="show">
-          <p>下拉框的内容，点击外面区域可以关闭</p>
-        </div>
-      </div>
-  </div>
+    <div>
+
+    </div>
 </template>
 
 <script>
-
-export default {
-  name: 'App',
-  components: {
-  },
-  data(){
-    return {
-      show:false
-    }
-  },
-  methods:{
-    handleClose:function () {
-      this.show = false
-    }
-  },
-  directives:{
+    export default {
+        name:'ClickOutside',
+        directives:{
             clickoutside:{
                 bind(el,binging,vnode){
                     function documentHandler (e){
@@ -45,11 +27,10 @@ export default {
                 }
             }
         }
-}
+
+    }
 </script>
 
-<style>
-  [v-clock] {
-    display:none;
-  }
+<style  scoped>
+
 </style>
